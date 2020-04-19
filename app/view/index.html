@@ -1,18 +1,75 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel='stylesheet' href='../static/style.css'>
+  <link rel="stylesheet" href="../static/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
   <script src='../static/client.js'></script>
 </head>
-<body>
-<div>
-  <div class='center'>
-    <div class='title'>Classify Bear Images 🐻</div>
-    <p>test</p>
+<body class="is-preload">
+<div class="wrapper">
+<section id="main" class="wrapper">
+	<div class="center inner">
+    <h1 class="major">Reddit Sentence Completion</h1>
     <p>
-      Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-      all three!
+      <strong>Instructions: </strong>Pick a model, pick a subbreddit, start typing a sentence, and see how it is finished based on the subreddit sentiment!
     </p>
+    <!-- Form -->
+    <section>
+      <form method="post" action="#">
+        <div class="row gtr-uniform">
+          <div class="col-6 col-12-xsmall">
+            <select name="demo-category" id="demo-category">
+              <option value="">- Model -</option>
+              <option value="1">GPT-2</option>
+              <option value="1">ULMFit</option>
+              <option value="1">Word2Vec</option>
+              <option value="1">N-gram</option>
+            </select>
+          </div>
+          <div class="col-6 col-12-xsmall">
+            <select name="demo-category" id="demo-category">
+              <option value="">- Subreddit -</option>
+              <option value="1">r/awww</option>
+              <option value="1">r/Conservative</option>
+              <option value="1">r/democrat</option>
+              <option value="1">r/ElizabethWarren</option>
+              <option value="">r/Impeach_Trump</option>
+              <option value="1">r/OurPresident</option>
+              <option value="1">r/Libertarian</option>
+              <option value="1">r/news</option>
+              <option value="1">r/politics</option>
+              <option value="">r/SandersForPresident</option>
+              <option value="1">r/The_Donald</option>
+              <option value="1">r/The_Mueller</option>
+              <option value="1">r/soccer</option>
+              <option value="1">r/YangForPresidentHQ</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <textarea name="demo-message" id="demo-message" placeholder="Enter your message: ex) Trump is..." rows="3"></textarea>
+          </div>
+          <div class="center col-6">
+            <ul class="actions fit">
+              <li><input type="submit" value="Send Message" class="primary button fit" /></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </section>
+    <br>
+    <br>
+
+    <div align="left">
+    <h2>Output:</h2><h3>
+		<pre><code rows="3">Trump is fat</code></pre></h3>
+    </div>
+    <!--<div align="left", style="display:inline;">
+    <h2>Output:</h2>
+		<p>Trump is fat</p>
+    </div>-->
+
     <div class='content'>
       <div class='no-display'>
         <input id='file-input'
@@ -37,6 +94,7 @@
       </div>
     </div>
   </div>
+</section>
 </div>
 </body>
 </html>
