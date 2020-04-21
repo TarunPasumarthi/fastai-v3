@@ -41,7 +41,6 @@ async def setup_learner():
         fname=path / export_file_name
         with zipfile.ZipFile(fname, 'r') as zip_ref:
             zip_ref.extractall(path)
-        print("hi")
     except RuntimeError as e:
         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
             print(e)
@@ -68,12 +67,13 @@ async def analyze(request):
     form_data = await request.form()
     sentence = form_data['sentence']
     #img = open_image(BytesIO(img_bytes))
-    model_output_path= path +"politics_100000"
+    model_output_path= str(path) +"/politics_100000/"
     config = {
             'model_type': 'gpt2',
             'model_name_or_path': model_output_path,
             }
     sys.argv = ['foo']
+    prompts=[sentence]
     sentences = main(config, prompts)
     return JSONResponse({'result': str(sentences[0])})
 
