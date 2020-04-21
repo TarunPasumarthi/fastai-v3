@@ -60,9 +60,9 @@ async def homepage(request):
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     form_data = await request.form()
-    sentence = await (form_data['sentence'])
+    sentence = form_data['sentence']
     #img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(sentence)[0]
+    prediction = learn.predict(sentence)
     return JSONResponse({'result': str(prediction)})
 
 
