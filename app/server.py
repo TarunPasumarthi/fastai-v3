@@ -8,9 +8,11 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+import zipfile
+from deploy_gpt2 import main
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1kncQ_Nt-LHfGQrIAF_tlmgyVkuIRwqNO?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU'
-export_file_name = 'politics_100000_stage2.pkl'
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1m4zD09JvOhG_7k0ovikIs7W5eB1oqJuY?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU'
+export_file_name = 'politics_gpt2.zip'
 #export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
 #export_file_name = 'export.pkl'
 
@@ -62,8 +64,14 @@ async def analyze(request):
     form_data = await request.form()
     sentence = form_data['sentence']
     #img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(sentence)
-    return JSONResponse({'result': str(prediction)})
+    model_output_path= path +"politics_100000"
+    config = {
+            'model_type': 'gpt2',
+            'model_name_or_path': model_output_path,
+            }
+    sys.argv = ['foo']
+    sentences = main(config, prompts)
+    return JSONResponse({'result': str(sentences[0])})
 
 
 if __name__ == '__main__':
