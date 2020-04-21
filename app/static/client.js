@@ -15,8 +15,11 @@ function showPicked(input) {
 }
 
 function analyze() {
-  var uploadFiles = el("file-input").files;
-  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+  //var uploadFiles = el("file-input").files;
+  var subreddit="politics";
+  var model="ULMFit";
+  var sentence="Trump is";
+  //if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Generating...";
   var xhr = new XMLHttpRequest();
@@ -35,7 +38,9 @@ function analyze() {
   };
 
   var fileData = new FormData();
-  fileData.append("file", uploadFiles[0]);
+  fileData.append("subreddit", subreddit);
+  fileData.append("model", model);
+  fileData.append("sentence", sentence);
   xhr.send(fileData);
 }
 

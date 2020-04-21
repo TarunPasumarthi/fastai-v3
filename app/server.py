@@ -9,8 +9,8 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
-export_file_name = 'export.pkl'
+export_file_url = 'https://drive.google.com/drive/folders/1jShCQTtDLKE7GyFwsvGinuMJkRmlU3uo'
+export_file_name = 'politics_100000_stage2.pkl'
 
 classes = ['black', 'grizzly', 'teddys']
 path = Path(__file__).parent
@@ -57,10 +57,10 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    img_data = await request.form()
-    img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img)[0]
+    form_data = await request.form()
+    sentence = await (form_data['sentence'])
+    #img = open_image(BytesIO(img_bytes))
+    prediction = learn.predict(sentence)[0]
     return JSONResponse({'result': str(prediction)})
 
 
