@@ -74,7 +74,9 @@ async def analyze(request):
             }
     sys.argv = ['foo']
     prompts=[sentence]
+    print("hey1")
     sentences = main(config, prompts)
+    print("hey")
     return JSONResponse({'result': str(sentences[0])})
 
 
