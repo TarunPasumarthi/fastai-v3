@@ -36,8 +36,12 @@ async def download_file(url, dest):
 async def setup_learner():
     await download_file(export_file_url, path / export_file_name)
     try:
-        learn = load_learner(path, export_file_name)
-        return learn
+        #learn = load_learner(path, "politics_100000_stage2.pkl")
+        #return learn
+        fname=path / export_file_name
+        with zipfile.ZipFile(fname, 'r') as zip_ref:
+            zip_ref.extractall(path)
+        print("hi")
     except RuntimeError as e:
         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
             print(e)
@@ -46,12 +50,12 @@ async def setup_learner():
         else:
             raise
 
-
-loop = asyncio.get_event_loop()
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(asyncio.new_event_loop())
+loop=asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
-
 
 @app.route('/')
 async def homepage(request):
