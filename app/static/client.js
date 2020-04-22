@@ -16,10 +16,25 @@ function showPicked(input) {
 
 function analyze() {
   //var uploadFiles = el("file-input").files;
-  var subreddit="politics";
-  var model="ULMFit";
-  var sentence="Trump is";
-  //if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+  var subhtml = document.getElementById("sub_cat");
+  var subval = subhtml.options[subhtml.selectedIndex].value;
+  var subreddit = subhtml.options[subhtml.selectedIndex].text;
+  var mhtml = document.getElementById("model_cat");
+  var mval = mhtml.options[mhtml.selectedIndex].value;
+  var model = mhtml.options[mhtml.selectedIndex].text;
+  var sentence=document.getElementById("senttext").value;
+  if(subval===""){
+    alert("Please pick a subreddit");
+    return;
+  }
+  else if (mval===""){
+    alert("Please pick a model");
+    return;
+  }
+  else if (sentence===""){
+    alert("Please enter a sentence");
+    return;
+  }
 
   el("analyze-button").innerHTML = "Generating...";
   var xhr = new XMLHttpRequest();
