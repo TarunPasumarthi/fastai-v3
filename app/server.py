@@ -60,7 +60,6 @@ async def setup_learner(model,export_file_url,export_file_name):
 for key in ulmfit:
     export_file_url=ulmfit[key]
     export_file_name=key[2:].lower()+"_100000_stage2.pkl"
-    print(export_file_name)
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(asyncio.new_event_loop())
     loop=asyncio.get_event_loop()
@@ -72,6 +71,7 @@ for key in ulmfit:
 for key in gpt2:
     export_file_url=gpt2[key]
     export_file_name=key[2:].lower()+"_gpt2.zip"
+    print(export_file_name)
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(asyncio.new_event_loop())
     loop=asyncio.get_event_loop()
