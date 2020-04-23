@@ -16,6 +16,9 @@ ulmfit={
 }
 
 gpt2={
+    "r/the_donald":"https://www.googleapis.com/drive/v3/files/1QZTLjXUSoCSOmf56axZS4e2JmNXN1OzQ?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
+    "r/ourpresident":"https://www.googleapis.com/drive/v3/files/1wx831hUTQ81BjdizjWRtYtMsKVG5raa8?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
+    "r/the_mueller":"https://www.googleapis.com/drive/v3/files/1N8FVZnLpUVLgFSDP3AGsWCKPCzb_jJlY?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
     "r/politics":'https://www.googleapis.com/drive/v3/files/1m4zD09JvOhG_7k0ovikIs7W5eB1oqJuY?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU',
     "r/aww":"https://www.googleapis.com/drive/v3/files/1J9RlWlCyRq28T6eFB4euw6TEaq7IEApy?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
     "r/conservative":"https://www.googleapis.com/drive/v3/files/1AW1ug-JabrCV01dsHJnn1WvN1QeRVRaa?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
@@ -26,8 +29,5 @@ gpt2={
     "r/news":"https://www.googleapis.com/drive/v3/files/1jQXh1PCSHd4Aq12mWfXmh_98OOtuaIU5?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
     "r/sandersforpresident":"https://www.googleapis.com/drive/v3/files/15wnfwF2xI_8Pv190izrvB8V0gGiTXwqB?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
     "r/soccer":"https://www.googleapis.com/drive/v3/files/146gYOaY7ppHpxkw8AUa2Rh9VJdADFsSu?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
-    "r/yangforpresidenthq":"https://www.googleapis.com/drive/v3/files/1ZxT19x8jAd94vQKHtyb3T2VWrltIOl4q?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
-    "r/the_mueller":"https://www.googleapis.com/drive/v3/files/1N8FVZnLpUVLgFSDP3AGsWCKPCzb_jJlY?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
-    "r/the_donald":"https://www.googleapis.com/drive/v3/files/1QZTLjXUSoCSOmf56axZS4e2JmNXN1OzQ?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU",
-    "r/ourpresident":"https://www.googleapis.com/drive/v3/files/1wx831hUTQ81BjdizjWRtYtMsKVG5raa8?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU"
+    "r/yangforpresidenthq":"https://www.googleapis.com/drive/v3/files/1ZxT19x8jAd94vQKHtyb3T2VWrltIOl4q?alt=media&key=AIzaSyCwAreaXcbtPfMsDQRpwLgS0uKNWxxvhKU"
 }
