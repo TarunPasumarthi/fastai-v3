@@ -18,7 +18,7 @@ function analyze() {
   //var uploadFiles = el("file-input").files;
   var subhtml = document.getElementById("sub_cat");
   var subval = subhtml.options[subhtml.selectedIndex].value;
-  var subreddit = subhtml.options[subhtml.selectedIndex].text;
+  var subreddit = subhtml.options[subhtml.selectedIndex].text.toLowerCase();
   var mhtml = document.getElementById("model_cat");
   var mval = mhtml.options[mhtml.selectedIndex].value;
   var model = mhtml.options[mhtml.selectedIndex].text;

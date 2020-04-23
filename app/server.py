@@ -43,9 +43,12 @@ async def setup_learner(model,export_file_url,export_file_name):
             learn = load_learner(path, export_file_name)
             return learn
         elif(model=="GPT-2"):
-            fname=path / export_file_name
-            with zipfile.ZipFile(fname, 'r') as zip_ref:
-                zip_ref.extractall(path)
+            pstring=export_file_name[:-9]+"_100000/"
+            cpath=path / pstring
+            if not cpath.exists():
+                fname=path / export_file_name
+                with zipfile.ZipFile(fname, 'r') as zip_ref:
+                    zip_ref.extractall(path)
     except RuntimeError as e:
         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
             print(e)
@@ -90,7 +93,7 @@ async def analyze(request):
     model= form_data['model']
     if(model=="ULMFit"):
         learn= ufmodels[subreddit]
-        prediction = learn.predict(sentence)
+        prediction = learn.predict(sentence, 10, temperature=0.10)
         return JSONResponse({'result': str(prediction)})
     elif(model=="GPT-2"):
         model_output_path= str(path)+"/"+subreddit[2:]+"_100000/"
@@ -100,9 +103,7 @@ async def analyze(request):
                 }
         sys.argv = ['foo']
         prompts=[sentence]
-        print("hey1")
         sentences = main(config, prompts)
-        print("hey")
         return JSONResponse({'result': str(sentences[0])})
 
 
